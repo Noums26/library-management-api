@@ -15,8 +15,9 @@ app.get('/tic', (req, res) => {
 });
 
 // Books
-app.get('/books', books.getAll)
-app.get('/books/{id}', books.getById)
+app.get('/books', books.getAll);
+app.get('/books/{id}', books.getById);
+app.delete('/books/:id', books.deleteById);
 
 //Connectivity
 const port = process.env.PORT || 8080;
