@@ -13,9 +13,17 @@ const getById = async (req, res) => {
   res.json(book);
 };
 
+const deleteById = async(req,res) => {
+  const {id} = req.params;
+  client.connect();
+  const toDelete = await client.query(`delete from books where id = ${id}`);
+  res.send("Book successfully deleted !");
+};
+
 const books = {
   getAll,
   getById,
+  deleteById
 };
 
 export default books;
