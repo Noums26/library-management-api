@@ -25,6 +25,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequest'
+  /whoiam:
+    get:
+      tags:
+        - Security
+      summary: How to check your user details
+      responses:
+       200:
+        description: User Details
+        content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/User'
   /authorize:
     put:
       tags:
